@@ -16,7 +16,7 @@ public class GUIMakerClass{
         JLabel label = new JLabel();
        // label.setBounds(10,10,670,250);
         //creating buttons
-        JButton connectbutton = new JButton();
+        JButton connectbutton = new JButton( );
         JButton acceptbutton = new JButton();
         JButton rejectbutton = new JButton();
         JPanel imagepanel = new JPanel();
