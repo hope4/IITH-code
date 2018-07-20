@@ -3,49 +3,41 @@ package databaseconnect;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
  
-/**
- *
- * @author postgresqltutorial.com
- */
 public class Databaseconnect{
  
-    private final String url = "jdbc:postgresql://192.168.134.5/5432/alertdatabase";
-    private final String user = "postgres";
-    private final String password = "ds123";
- 
-    /**
-     * Connect to the PostgreSQL database
-     *
-     * @return a Connection object
-     */
-    public Connection connect() {
-        Connection conn = null;
+    Connection connection ;
+    String url ="jdbc:postgresql://192.168.134.5:5432/alertdatabase";
+    String user = "postgres";
+    String password = "ds123";
+    public Connection dbConnection(){
+        
+        try{
+        
+            Class.forName("org.postgresql.Driver.Driver");
+        
+        }
+        catch(ClassNotFoundException e){
+                e.getMessage();
+        }
         try {
-            conn = DriverManager.getConnection(url, user, password);
-            System.out.println("Connected to the PostgreSQL server successfully.");
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            DriverManager.getConnection(url, user, password);
+            JOptionPane.showMessageDialog(null, "Connected");
+           
+        } catch (SQLException ex) {
+            Logger.getLogger(Databaseconnect.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null,"Failed to connect")
         }
- 
-        return conn;
+        
+         return connection;
+    }
+    
+    public static void main(String[] args){
+        
     }
  
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        App app = new App();
-        app.connect();
-    }
-
-    private static class App {
-
-        public App() {
-        }
-
-        private void connect() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-    }
 }
