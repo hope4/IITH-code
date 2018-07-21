@@ -13,7 +13,7 @@ class User {
     private int camera_id,alert_id,horizontal,vertical,height,width;
     private String timestamp;
     
-    public User(int alert_id,String timestamp,int horizontal,int vertical,int height,int width,int camera_id){
+    public User(int alert_id,String timestamp,int horizontal,int vertical,int height,int width){
     
     this.camera_id = camera_id;
     this.alert_id = alert_id;
