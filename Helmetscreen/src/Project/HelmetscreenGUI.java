@@ -168,7 +168,7 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jtable_display_alerts = new javax.swing.JTable();
         passwordtextfield = new javax.swing.JPasswordField();
-        jLabel1 = new javax.swing.JLabel();
+        jlabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -253,10 +253,32 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
             new String [] {
                 "alert_id", "timestamp", "horizontal", "vertical", "height", "width"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jtable_display_alerts.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+                jtable_display_alertsAncestorMoved(evt);
+            }
+        });
         jtable_display_alerts.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jtable_display_alertsFocusGained(evt);
+            }
+        });
+        jtable_display_alerts.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtable_display_alertsMouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(jtable_display_alerts);
@@ -289,42 +311,42 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
                                                 .addComponent(usernametextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
                                                 .addComponent(passwordtextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(68, 68, 68)
                         .addComponent(acceptbutton)
-                        .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(31, 31, 31)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(23, 23, 23)
-                                        .addComponent(rejectbutton))
-                                    .addComponent(passwordlabel))
-                                .addGap(33, 33, 33)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGap(154, 154, 154)
+                                        .addComponent(connectbutton))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(84, 84, 84)
-                                        .addComponent(revokebutton))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(45, 45, 45)
+                                        .addComponent(passwordlabel)
+                                        .addGap(86, 86, 86)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(databaselabel)
-                                            .addComponent(databasetextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                            .addComponent(databasetextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(portlabel)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(portlabel)
-                                .addGap(255, 255, 255)
-                                .addComponent(cameralabel))
+                                .addGap(151, 151, 151)
+                                .addComponent(rejectbutton)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(154, 154, 154)
-                                .addComponent(connectbutton)
-                                .addGap(110, 110, 110)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(tablelistlabel)
-                                    .addComponent(cameralist, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(tablelist, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGap(75, 75, 75)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cameralabel)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(tablelistlabel)
+                                        .addComponent(cameralist, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(tablelist, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(revokebutton)
+                                .addGap(97, 97, 97)))))
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 618, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -335,11 +357,13 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(IPlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(portlabel)
-                            .addComponent(databaselabel, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cameralabel))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(databaselabel, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cameralabel))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(IPlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(portlabel)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(iptextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -364,7 +388,7 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(tablelist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(acceptbutton)
@@ -417,7 +441,10 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_connectbuttonActionPerformed
 
     private void cameralistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cameralistActionPerformed
+        jlabel.setIcon(null);
+        jlabel.paintImmediately(jlabel.getVisibleRect());
         try{
+           
             String query1 = "select alerts.alert_id,alerts.timestamp,alerts.horizontal,alerts.vertical,alerts.height,alerts.width from alerts inner join "+tablelist.getSelectedItem()+" on alerts.alert_id = "+tablelist.getSelectedItem()+".alert_id where camera_id = "+cameralist.getSelectedItem();
             Statement st1 = (Statement) con.createStatement();
             ResultSet rs1 = st1.executeQuery(query1);
@@ -441,7 +468,9 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_cameralistActionPerformed
   
     private void tablelistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tablelistActionPerformed
+         jlabel.setIcon(null);
         try{
+          
             String query1 = "select alerts.alert_id,alerts.timestamp,alerts.horizontal,alerts.vertical,alerts.height,alerts.width from alerts inner join "+tablelist.getSelectedItem()+" on alerts.alert_id = "+tablelist.getSelectedItem()+".alert_id where camera_id = "+cameralist.getSelectedItem();
             Statement st1 = (Statement) con.createStatement();
             ResultSet rs1 = st1.executeQuery(query1);
@@ -468,15 +497,48 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_databasetextfieldActionPerformed
 
     private void jtable_display_alertsFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtable_display_alertsFocusGained
-        try {
-            URL url = new URL("file:///run/user/1001/gvfs/sftp:host=192.168.134.5,user=dinesh%253Ads123/home/dinesh/django-apps/webapp/htp/static/htp/Images/1.jpg");
-            jLabel1.setIcon(new javax.swing.ImageIcon(url));
-          } catch (MalformedURLException ex) {
-              Logger.getLogger(HelmetscreenGUI.class.getName()).log(Level.SEVERE, null, ex);
-          }
-        
+//       
+       
         
     }//GEN-LAST:event_jtable_display_alertsFocusGained
+
+    private void jtable_display_alertsAncestorMoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jtable_display_alertsAncestorMoved
+        // TODO add your handling code here:
+      
+        
+    }//GEN-LAST:event_jtable_display_alertsAncestorMoved
+
+    private void jtable_display_alertsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtable_display_alertsMouseClicked
+    
+        // TODO add your handling code here:
+         int selectedRowIndex = 0;
+        DefaultTableModel model = (DefaultTableModel) jtable_display_alerts.getModel();
+        selectedRowIndex = jtable_display_alerts.getSelectedRow();
+      //  System.out.println(selectedRowIndex);
+        
+        if(selectedRowIndex >=0 ){
+        
+       String timestamp = model.getValueAt(selectedRowIndex, 1).toString();
+      //  System.out.println(timestamp);
+//       
+       
+         try {
+            URL url = new URL("file:///run/user/1001/gvfs/sftp:host=192.168.134.5,user=dinesh/home/dinesh/Downloads/webapp/htp/static/htp/Images/"+timestamp+".jpg");
+           BufferedImage img = null;
+           
+          img = ImageIO.read(url);
+            Image dimg = img.getScaledInstance(jlabel.getWidth(), jlabel.getHeight(), Image.SCALE_SMOOTH);
+            jlabel.setIcon(new javax.swing.ImageIcon(dimg));
+            
+          } catch (MalformedURLException ex) {
+              Logger.getLogger(HelmetscreenGUI.class.getName()).log(Level.SEVERE, null, ex);
+          }  catch (IOException ex) {
+                 Logger.getLogger(HelmetscreenGUI.class.getName()).log(Level.SEVERE, null, ex);
+             }
+        }
+       
+
+    }//GEN-LAST:event_jtable_display_alertsMouseClicked
 
     /**
      * @param args the command line arguments
@@ -522,9 +584,9 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
     private javax.swing.JLabel databaselabel;
     private javax.swing.JTextField databasetextfield;
     private javax.swing.JTextField iptextfield;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel jlabel;
     private javax.swing.JTable jtable_display_alerts;
     private javax.swing.JLabel passwordlabel;
     private javax.swing.JPasswordField passwordtextfield;

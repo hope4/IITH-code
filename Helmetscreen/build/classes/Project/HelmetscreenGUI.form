@@ -48,57 +48,58 @@
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <Component id="jLabel1" alignment="0" min="-2" pref="611" max="-2" attributes="0"/>
+                                  <Component id="jlabel" alignment="0" min="-2" pref="611" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace pref="28" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                       <Component id="acceptbutton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-                                      <Component id="rejectbutton" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="passwordlabel" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                                      <Component id="revokebutton" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
+                                      <Component id="connectbutton" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                                      <Component id="passwordlabel" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="databaselabel" min="-2" max="-2" attributes="0"/>
                                           <Component id="databasetextfield" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
+                                  <Component id="portlabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="portlabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="255" max="-2" attributes="0"/>
-                              <Component id="cameralabel" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
-                              <Component id="connectbutton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="tablelistlabel" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cameralist" max="32767" attributes="0"/>
-                                  <Component id="tablelist" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                              <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
+                              <Component id="rejectbutton" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="cameralabel" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="tablelistlabel" min="-2" max="-2" attributes="0"/>
+                                      <Component id="cameralist" max="32767" attributes="0"/>
+                                      <Component id="tablelist" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="revokebutton" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
               <Component id="jScrollPane2" min="-2" pref="618" max="-2" attributes="0"/>
@@ -113,11 +114,15 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jScrollPane2" min="-2" pref="604" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="IPlabel" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
-                          <Component id="portlabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="databaselabel" alignment="0" min="-2" pref="17" max="-2" attributes="0"/>
-                          <Component id="cameralabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="databaselabel" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
+                              <Component id="cameralabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="IPlabel" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
+                              <Component id="portlabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -150,7 +155,7 @@
                           </Group>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" pref="453" max="-2" attributes="0"/>
+                      <Component id="jlabel" min="-2" pref="453" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="acceptbutton" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -304,12 +309,12 @@
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="6" rowCount="0">
-                    <Column editable="true" title="alert_id" type="java.lang.Object"/>
-                    <Column editable="true" title="timestamp" type="java.lang.Object"/>
-                    <Column editable="true" title="horizontal" type="java.lang.Object"/>
-                    <Column editable="true" title="vertical" type="java.lang.Object"/>
-                    <Column editable="true" title="height" type="java.lang.Object"/>
-                    <Column editable="true" title="width" type="java.lang.Object"/>
+                    <Column editable="false" title="alert_id" type="java.lang.Object"/>
+                    <Column editable="false" title="timestamp" type="java.lang.Object"/>
+                    <Column editable="false" title="horizontal" type="java.lang.Object"/>
+                    <Column editable="false" title="vertical" type="java.lang.Object"/>
+                    <Column editable="false" title="height" type="java.lang.Object"/>
+                    <Column editable="false" title="width" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -351,7 +356,9 @@
                 </Property>
               </Properties>
               <Events>
+                <EventHandler event="ancestorMoved" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="jtable_display_alertsAncestorMoved"/>
                 <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtable_display_alertsFocusGained"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jtable_display_alertsMouseClicked"/>
               </Events>
             </Component>
           </SubComponents>
@@ -363,7 +370,7 @@
         <Property name="text" type="java.lang.String" value="ds123"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="jlabel">
     </Component>
   </SubComponents>
 </Form>
