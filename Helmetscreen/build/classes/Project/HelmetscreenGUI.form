@@ -24,148 +24,111 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="usernamelabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="IPlabel" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="porttextfield" alignment="1" min="-2" pref="133" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="iptextfield" min="-2" pref="108" max="-2" attributes="0"/>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="usernametextfield" min="-2" pref="108" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="passwordtextfield" min="-2" pref="136" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                                  <Component id="jlabel" alignment="0" min="-2" pref="611" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace pref="28" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <EmptySpace min="-2" pref="198" max="-2" attributes="0"/>
+                      <Component id="acceptbutton" min="-2" pref="73" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="rejectbutton" min="-2" pref="64" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="revokebutton" min="-2" pref="62" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
-                      <Component id="acceptbutton" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jlabel" alignment="1" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
-                                      <Component id="connectbutton" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="passwordlabel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="databaselabel" min="-2" max="-2" attributes="0"/>
-                                          <Component id="databasetextfield" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Component id="portlabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="iptextfield" linkSize="3" min="-2" pref="129" max="-2" attributes="0"/>
+                                  <Component id="usernamelabel" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
+                                  <Component id="IPlabel" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
+                                  <Component id="usernametextfield" linkSize="3" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="portlabel" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="passwordlabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="porttextfield" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="passwordtextfield" alignment="0" pref="77" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="51" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="connectbutton" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <Component id="databaselabel" min="-2" pref="66" max="-2" attributes="0"/>
+                                  <Component id="databasetextfield" min="-2" pref="158" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="cameralabel" min="-2" pref="54" max="-2" attributes="0"/>
+                                  <Component id="cameralist" linkSize="4" min="-2" pref="169" max="-2" attributes="0"/>
+                                  <Component id="tablelist" linkSize="4" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
+                                  <Component id="tablelistlabel" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
-                              <Component id="rejectbutton" min="-2" max="-2" attributes="0"/>
-                          </Group>
                       </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="cameralabel" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="tablelistlabel" min="-2" max="-2" attributes="0"/>
-                                      <Component id="cameralist" max="32767" attributes="0"/>
-                                      <Component id="tablelist" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="revokebutton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <Component id="jScrollPane2" min="-2" pref="618" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane1" pref="616" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="IPlabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="portlabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="databaselabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cameralabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane2" min="-2" pref="604" max="-2" attributes="0"/>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="databaselabel" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
-                              <Component id="cameralabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="IPlabel" alignment="3" min="-2" pref="17" max="-2" attributes="0"/>
-                              <Component id="portlabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="iptextfield" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="porttextfield" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="databasetextfield" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="iptextfield" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="porttextfield" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="databasetextfield" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cameralist" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="passwordlabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="usernamelabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="passwordlabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="usernamelabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="usernametextfield" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="passwordtextfield" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="connectbutton" alignment="1" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                          <Component id="usernametextfield" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="passwordtextfield" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="connectbutton" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                              <Component id="tablelistlabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="tablelist" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jlabel" min="-2" pref="453" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="acceptbutton" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="revokebutton" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="rejectbutton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                      <Component id="cameralist" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="tablelistlabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="tablelist" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+              <Component id="jlabel" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="acceptbutton" linkSize="2" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                  <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                      <Component id="rejectbutton" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                      <Component id="revokebutton" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
           </Group>
+          <Component id="jScrollPane1" alignment="1" pref="637" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -297,79 +260,6 @@
         <Property name="text" type="java.lang.String" value="Tablelist"/>
       </Properties>
     </Component>
-    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-      <SubComponents>
-        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-          <AuxValues>
-            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-          </AuxValues>
-
-          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-          <SubComponents>
-            <Component class="javax.swing.JTable" name="jtable_display_alerts">
-              <Properties>
-                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="6" rowCount="0">
-                    <Column editable="false" title="alert_id" type="java.lang.Object"/>
-                    <Column editable="false" title="timestamp" type="java.lang.Object"/>
-                    <Column editable="false" title="horizontal" type="java.lang.Object"/>
-                    <Column editable="false" title="vertical" type="java.lang.Object"/>
-                    <Column editable="false" title="height" type="java.lang.Object"/>
-                    <Column editable="false" title="width" type="java.lang.Object"/>
-                  </Table>
-                </Property>
-                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                  <TableColumnModel selectionModel="0">
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                      <Title/>
-                      <Editor/>
-                      <Renderer/>
-                    </Column>
-                  </TableColumnModel>
-                </Property>
-                <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-                  <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="ancestorMoved" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="jtable_display_alertsAncestorMoved"/>
-                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtable_display_alertsFocusGained"/>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jtable_display_alertsMouseClicked"/>
-                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtable_display_alertsKeyPressed"/>
-                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtable_display_alertsKeyReleased"/>
-              </Events>
-            </Component>
-          </SubComponents>
-        </Container>
-      </SubComponents>
-    </Container>
     <Component class="javax.swing.JPasswordField" name="passwordtextfield">
       <Properties>
         <Property name="text" type="java.lang.String" value="ds123"/>
@@ -377,5 +267,72 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jlabel">
     </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTable" name="jtable_display_alerts">
+          <Properties>
+            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+              <Table columnCount="6" rowCount="0">
+                <Column editable="false" title="alert_id" type="java.lang.Object"/>
+                <Column editable="false" title="timestamp" type="java.lang.Object"/>
+                <Column editable="false" title="horizontal" type="java.lang.Object"/>
+                <Column editable="false" title="vertical" type="java.lang.Object"/>
+                <Column editable="false" title="height" type="java.lang.Object"/>
+                <Column editable="false" title="width" type="java.lang.Object"/>
+              </Table>
+            </Property>
+            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+              <TableColumnModel selectionModel="0">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+              </TableColumnModel>
+            </Property>
+            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="ancestorMoved" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="jtable_display_alertsAncestorMoved"/>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtable_display_alertsFocusGained"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jtable_display_alertsMouseClicked"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtable_display_alertsKeyPressed"/>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jtable_display_alertsKeyReleased"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>
