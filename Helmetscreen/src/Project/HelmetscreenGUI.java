@@ -5,6 +5,7 @@
  */
 package Project;
 
+import com.sun.glass.events.KeyEvent;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Image;
@@ -15,6 +16,7 @@ import java.net.URL;
 import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -241,6 +243,11 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
         });
 
         rejectbutton.setText("reject");
+        rejectbutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rejectbuttonActionPerformed(evt);
+            }
+        });
 
         cameralabel.setText("Camera");
 
@@ -279,6 +286,14 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
         jtable_display_alerts.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jtable_display_alertsMouseClicked(evt);
+            }
+        });
+        jtable_display_alerts.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jtable_display_alertsKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jtable_display_alertsKeyReleased(evt);
             }
         });
         jScrollPane1.setViewportView(jtable_display_alerts);
@@ -407,6 +422,35 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
 
     private void acceptbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acceptbuttonActionPerformed
         // TODO add your handling code here:
+        int selectedRowIndex = 0;
+        DefaultTableModel model = (DefaultTableModel) jtable_display_alerts.getModel();
+        selectedRowIndex = jtable_display_alerts.getSelectedRow();
+        
+        if(selectedRowIndex >=0 ){
+        
+       String alertid = model.getValueAt(selectedRowIndex, 0).toString();
+       int rows = jtable_display_alerts.getRowCount();
+         try{
+            String query1 = "insert into challans (op_id,alert_id,description) values (1,"+alertid+",'123')";
+            Statement st1 = (Statement) con.createStatement();
+            st1.execute(query1);
+            
+            System.out.println("*****************");
+            String query2 = "delete from new_alerts where alert_id ="+alertid;
+            
+            Statement st2 = (Statement) con.createStatement();
+            
+            st2.execute(query2);
+            
+
+            connectbutton.setEnabled(false);
+            
+        }catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+        
+        }
     }//GEN-LAST:event_acceptbuttonActionPerformed
 
     private void usernametextfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernametextfieldActionPerformed
@@ -415,6 +459,34 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
 
     private void revokebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_revokebuttonActionPerformed
         // TODO add your handling code here:
+          int selectedRowIndex = 0;
+        DefaultTableModel model = (DefaultTableModel) jtable_display_alerts.getModel();
+        selectedRowIndex = jtable_display_alerts.getSelectedRow();
+        
+        if(selectedRowIndex >=0 ){
+        
+       String alertid = model.getValueAt(selectedRowIndex, 0).toString();
+         try{
+            String query1 = "insert into new_alerts (alert_id) values("+alertid+")";
+            Statement st = (Statement) con.createStatement();
+            st.execute(query1);
+            
+            String query2 = "delete from "+tablelist.getSelectedItem()+" where alert_id ="+alertid;
+            Statement st2 = (Statement) con.createStatement();
+            st2.execute(query2);
+//            while(rs.next()){
+//                String number;
+//                number = rs.getString("camera_id");
+//                cameralist.addItem(number);
+//            }
+            connectbutton.setEnabled(false);
+            
+        }catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+        
+        }
     }//GEN-LAST:event_revokebuttonActionPerformed
 
     private void connectbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_connectbuttonActionPerformed
@@ -444,7 +516,10 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
         jlabel.setIcon(null);
         jlabel.paintImmediately(jlabel.getVisibleRect());
         try{
-           
+            if(tablelist.getSelectedItem() == "New_Alerts"){
+            revokebutton.setEnabled(false);
+            acceptbutton.setEnabled(true);
+            rejectbutton.setEnabled(true);
             String query1 = "select alerts.alert_id,alerts.timestamp,alerts.horizontal,alerts.vertical,alerts.height,alerts.width from alerts inner join "+tablelist.getSelectedItem()+" on alerts.alert_id = "+tablelist.getSelectedItem()+".alert_id where camera_id = "+cameralist.getSelectedItem();
             Statement st1 = (Statement) con.createStatement();
             ResultSet rs1 = st1.executeQuery(query1);
@@ -460,6 +535,30 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
                 row[5] = (Object)rs1.getString("width");
                 model.addRow(row);
             }
+            }
+            else{
+            revokebutton.setEnabled(true);
+            acceptbutton.setEnabledf(false);
+            rejectbutton.setEnabled(false);
+            String query1 = "select alerts.alert_id,alerts.timestamp,alerts.horizontal,alerts.vertical,alerts.height,alerts.width from alerts inner join "+tablelist.getSelectedItem()+" on alerts.alert_id = "+tablelist.getSelectedItem()+".alert_id where camera_id = "+cameralist.getSelectedItem();
+            Statement st1 = (Statement) con.createStatement();
+            ResultSet rs1 = st1.executeQuery(query1);
+            DefaultTableModel model = (DefaultTableModel) jtable_display_alerts.getModel();
+            model.setRowCount(0);
+            Object []row=new Object[6];
+            while(rs1.next()){
+                row[0] = (Object)rs1.getString("alert_id");
+                row[1] = (Object)rs1.getString("timestamp");
+                row[2] = (Object)rs1.getString("horizontal");
+                row[3] = (Object)rs1.getString("vertical");
+                row[4] = (Object)rs1.getString("height");
+                row[5] = (Object)rs1.getString("width");
+                model.addRow(row);
+            }   
+                    
+                    
+        }
+            
             connectbutton.setEnabled(false);
         }catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
@@ -469,8 +568,11 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
   
     private void tablelistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tablelistActionPerformed
          jlabel.setIcon(null);
-        try{
-          
+       try{
+            if(tablelist.getSelectedItem() == "New_Alerts"){
+            revokebutton.setEnabled(false);
+            acceptbutton.setEnabled(true);
+            rejectbutton.setEnabled(true);
             String query1 = "select alerts.alert_id,alerts.timestamp,alerts.horizontal,alerts.vertical,alerts.height,alerts.width from alerts inner join "+tablelist.getSelectedItem()+" on alerts.alert_id = "+tablelist.getSelectedItem()+".alert_id where camera_id = "+cameralist.getSelectedItem();
             Statement st1 = (Statement) con.createStatement();
             ResultSet rs1 = st1.executeQuery(query1);
@@ -486,6 +588,30 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
                 row[5] = (Object)rs1.getString("width");
                 model.addRow(row);
             }
+            }
+            else{
+            revokebutton.setEnabled(true);
+            acceptbutton.setEnabled(false);
+            rejectbutton.setEnabled(false);
+            String query1 = "select alerts.alert_id,alerts.timestamp,alerts.horizontal,alerts.vertical,alerts.height,alerts.width from alerts inner join "+tablelist.getSelectedItem()+" on alerts.alert_id = "+tablelist.getSelectedItem()+".alert_id where camera_id = "+cameralist.getSelectedItem();
+            Statement st1 = (Statement) con.createStatement();
+            ResultSet rs1 = st1.executeQuery(query1);
+            DefaultTableModel model = (DefaultTableModel) jtable_display_alerts.getModel();
+            model.setRowCount(0);
+            Object []row=new Object[6];
+            while(rs1.next()){
+                row[0] = (Object)rs1.getString("alert_id");
+                row[1] = (Object)rs1.getString("timestamp");
+                row[2] = (Object)rs1.getString("horizontal");
+                row[3] = (Object)rs1.getString("vertical");
+                row[4] = (Object)rs1.getString("height");
+                row[5] = (Object)rs1.getString("width");
+                model.addRow(row);
+            }   
+                    
+                    
+        }
+            
             connectbutton.setEnabled(false);
         }catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
@@ -514,16 +640,14 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
          int selectedRowIndex = 0;
         DefaultTableModel model = (DefaultTableModel) jtable_display_alerts.getModel();
         selectedRowIndex = jtable_display_alerts.getSelectedRow();
-      //  System.out.println(selectedRowIndex);
         
         if(selectedRowIndex >=0 ){
         
-       String timestamp = model.getValueAt(selectedRowIndex, 1).toString();
-      //  System.out.println(timestamp);
-//       
+       String timestamp = model.getValueAt(selectedRowIndex, 1).toString(); 
+       System.out.println(timestamp);
        
          try {
-            URL url = new URL("file:///run/user/1001/gvfs/sftp:host=192.168.134.5,user=dinesh/home/dinesh/Downloads/webapp/htp/static/htp/Images/"+timestamp+".jpg");
+            URL url = new URL("file:///run/user/1001/gvfs/sftp:host=192.168.134.5,user=dinesh%253Ads123/home/dinesh/django-apps/webapp/htp/static/htp/Images/"+timestamp+".jpg");
            BufferedImage img = null;
            
           img = ImageIO.read(url);
@@ -539,6 +663,98 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
        
 
     }//GEN-LAST:event_jtable_display_alertsMouseClicked
+
+    private void jtable_display_alertsKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtable_display_alertsKeyPressed
+
+    }//GEN-LAST:event_jtable_display_alertsKeyPressed
+
+    private void jtable_display_alertsKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtable_display_alertsKeyReleased
+        // TODO add your handling code here:
+           if(evt.getKeyCode()==KeyEvent.VK_UP ){
+          int selectedRowIndex = 0;
+        DefaultTableModel model = (DefaultTableModel) jtable_display_alerts.getModel();
+        selectedRowIndex = jtable_display_alerts.getSelectedRow();
+        System.out.println(selectedRowIndex);
+        
+        if(selectedRowIndex >=0 ){
+        
+       String timestamp = model.getValueAt(selectedRowIndex, 1).toString();
+       
+       
+         try {
+            URL url = new URL("file:///run/user/1001/gvfs/sftp:host=192.168.134.5,user=dinesh%253Ads123/home/dinesh/django-apps/webapp/htp/static/htp/Images/"+timestamp+".jpg");
+           BufferedImage img = null;
+           
+          img = ImageIO.read(url);
+            Image dimg = img.getScaledInstance(jlabel.getWidth(), jlabel.getHeight(), Image.SCALE_SMOOTH);
+            jlabel.setIcon(new javax.swing.ImageIcon(dimg));
+            
+          } catch (MalformedURLException ex) {
+              Logger.getLogger(HelmetscreenGUI.class.getName()).log(Level.SEVERE, null, ex);
+          }  catch (IOException ex) {
+                 Logger.getLogger(HelmetscreenGUI.class.getName()).log(Level.SEVERE, null, ex);
+             }
+        }
+        }
+        else{
+           int selectedRowIndex = 0;
+        DefaultTableModel model = (DefaultTableModel) jtable_display_alerts.getModel();
+        selectedRowIndex = jtable_display_alerts.getSelectedRow();
+        System.out.println(selectedRowIndex);
+        
+        if(selectedRowIndex >=0 ){
+        
+       String timestamp = model.getValueAt(selectedRowIndex, 1).toString();
+       
+       
+         try {
+            URL url = new URL("file:///run/user/1001/gvfs/sftp:host=192.168.134.5,user=dinesh%253Ads123/home/dinesh/django-apps/webapp/htp/static/htp/Images/"+timestamp+".jpg");
+           BufferedImage img = null;
+           
+          img = ImageIO.read(url);
+            Image dimg = img.getScaledInstance(jlabel.getWidth(), jlabel.getHeight(), Image.SCALE_SMOOTH);
+            jlabel.setIcon(new javax.swing.ImageIcon(dimg));
+            
+          } catch (MalformedURLException ex) {
+              Logger.getLogger(HelmetscreenGUI.class.getName()).log(Level.SEVERE, null, ex);
+          }  catch (IOException ex) {
+                 Logger.getLogger(HelmetscreenGUI.class.getName()).log(Level.SEVERE, null, ex);
+             }
+        }
+            
+        }
+    }//GEN-LAST:event_jtable_display_alertsKeyReleased
+
+    private void rejectbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejectbuttonActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex = 0;
+        DefaultTableModel model = (DefaultTableModel) jtable_display_alerts.getModel();
+        selectedRowIndex = jtable_display_alerts.getSelectedRow();
+        
+        if(selectedRowIndex >=0 ){
+        
+       String alertid = model.getValueAt(selectedRowIndex, 0).toString();
+         try{
+            String query1 = "insert into rejected_alerts (alert_id,op_id,description) values("+alertid+"1,'123')";
+            Statement st = (Statement) con.createStatement();
+            st.execute(query1);
+            String query2 = "delete from new_alerts where alert_id ="+alertid;
+            Statement st2 = (Statement) con.createStatement();
+            st2.execute(query2);
+//            while(rs.next()){
+//                String number;
+//                number = rs.getString("camera_id");
+//                cameralist.addItem(number);
+//            }
+            connectbutton.setEnabled(false);
+            
+        }catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+        
+        }
+    }//GEN-LAST:event_rejectbuttonActionPerformed
 
     /**
      * @param args the command line arguments
