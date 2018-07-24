@@ -37,98 +37,98 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="iptextfield" linkSize="3" min="-2" pref="129" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="usernamelabel" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
                                   <Component id="IPlabel" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                                  <Component id="usernametextfield" linkSize="3" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
+                                  <Component id="iptextfield" pref="150" max="32767" attributes="0"/>
+                                  <Component id="usernametextfield" alignment="0" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="portlabel" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                                   <Component id="passwordlabel" min="-2" max="-2" attributes="0"/>
-                                  <Component id="porttextfield" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="passwordtextfield" alignment="0" pref="77" max="32767" attributes="0"/>
+                                  <Component id="porttextfield" max="32767" attributes="0"/>
+                                  <Component id="passwordtextfield" alignment="0" pref="176" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="51" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="connectbutton" min="-2" pref="158" max="-2" attributes="0"/>
                                   <Component id="databaselabel" min="-2" pref="66" max="-2" attributes="0"/>
-                                  <Component id="databasetextfield" min="-2" pref="158" max="-2" attributes="0"/>
+                                  <Component id="databasetextfield" min="-2" pref="250" max="-2" attributes="0"/>
+                                  <Component id="connectbutton" min="-2" pref="158" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
+                              <EmptySpace pref="132" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="cameralabel" min="-2" pref="54" max="-2" attributes="0"/>
-                                  <Component id="cameralist" linkSize="4" min="-2" pref="169" max="-2" attributes="0"/>
-                                  <Component id="tablelist" linkSize="4" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
                                   <Component id="tablelistlabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cameralist" max="32767" attributes="0"/>
+                                  <Component id="tablelist" alignment="0" min="-2" pref="327" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="jlabel" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="43" pref="43" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="729" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <Component id="jScrollPane1" pref="616" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="IPlabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="portlabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="databaselabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cameralabel" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="iptextfield" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="porttextfield" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="databasetextfield" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="passwordlabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="usernamelabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="IPlabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="portlabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="databaselabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cameralabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="usernametextfield" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="passwordtextfield" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="connectbutton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="iptextfield" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="porttextfield" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="databasetextfield" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="passwordlabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="usernamelabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="usernametextfield" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="passwordtextfield" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="connectbutton" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                              <Component id="cameralist" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="tablelistlabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="tablelist" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                      <Component id="cameralist" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tablelistlabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="tablelist" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jlabel" min="-2" pref="869" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jlabel" max="32767" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="acceptbutton" linkSize="2" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
-                  <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                      <Component id="rejectbutton" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                      <Component id="revokebutton" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="acceptbutton" linkSize="2" alignment="1" min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="rejectbutton" alignment="1" min="-2" pref="29" max="-2" attributes="0"/>
+                  <Component id="revokebutton" linkSize="2" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
-          <Component id="jScrollPane1" alignment="1" pref="637" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -265,8 +265,6 @@
         <Property name="text" type="java.lang.String" value="ds123"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jlabel">
-    </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
@@ -334,5 +332,7 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JLabel" name="jlabel">
+    </Component>
   </SubComponents>
 </Form>
