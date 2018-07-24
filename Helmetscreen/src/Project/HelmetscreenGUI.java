@@ -271,12 +271,12 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
             }
         });
         jtable_display_alerts.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+                jtable_display_alertsAncestorMoved(evt);
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-                jtable_display_alertsAncestorMoved(evt);
             }
         });
         jtable_display_alerts.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -312,12 +312,11 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(rejectbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(revokebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(revokebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jlabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(iptextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(usernamelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -339,7 +338,8 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
                                     .addComponent(cameralabel, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(cameralist, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(tablelist, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tablelistlabel))))
+                                    .addComponent(tablelistlabel)))
+                            .addComponent(jlabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(43, 43, 43)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 616, Short.MAX_VALUE))
         );
@@ -382,9 +382,9 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
                         .addComponent(tablelistlabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(tablelist, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jlabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(37, 37, 37)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(acceptbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -425,7 +425,8 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
             
             st2.execute(query2);
             
-
+             jlabel.setIcon(null);
+            ((DefaultTableModel)jtable_display_alerts.getModel()).removeRow(selectedRowIndex);
             connectbutton.setEnabled(false);
             
         }catch (Exception e) {
@@ -519,7 +520,7 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
             }
             else{
             revokebutton.setEnabled(true);
-            acceptbutton.setEnabledf(false);
+            acceptbutton.setEnabled(false);
             rejectbutton.setEnabled(false);
             String query1 = "select alerts.alert_id,alerts.timestamp,alerts.horizontal,alerts.vertical,alerts.height,alerts.width from alerts inner join "+tablelist.getSelectedItem()+" on alerts.alert_id = "+tablelist.getSelectedItem()+".alert_id where camera_id = "+cameralist.getSelectedItem();
             Statement st1 = (Statement) con.createStatement();
@@ -592,6 +593,7 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
                     
                     
         }
+            
             
             connectbutton.setEnabled(false);
         }catch (Exception e) {
@@ -716,7 +718,8 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
         
        String alertid = model.getValueAt(selectedRowIndex, 0).toString();
          try{
-            String query1 = "insert into rejected_alerts (alert_id,op_id,description) values("+alertid+"1,'123')";
+            String query1 = "insert into rejected_alerts (alert_id,op_id,description) values("+alertid+",1,'123')";
+            System.out.println(query1);
             Statement st = (Statement) con.createStatement();
             st.execute(query1);
             String query2 = "delete from new_alerts where alert_id ="+alertid;
@@ -727,6 +730,8 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
 //                number = rs.getString("camera_id");
 //                cameralist.addItem(number);
 //            }
+             jlabel.setIcon(null);
+            ((DefaultTableModel)jtable_display_alerts.getModel()).removeRow(selectedRowIndex);
             connectbutton.setEnabled(false);
             
         }catch (Exception e) {
