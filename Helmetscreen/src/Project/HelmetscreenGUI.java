@@ -385,11 +385,12 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
         }catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
-        
-        
+        }
+         else{
+                 JOptionPane.showMessageDialog(null, "Please select any row from the table");
         }
     }//GEN-LAST:event_acceptbuttonActionPerformed
-
+        
     private void usernametextfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernametextfieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_usernametextfieldActionPerformed
@@ -420,8 +421,9 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
         }catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
-        
-        
+        }
+         else{
+                 JOptionPane.showMessageDialog(null, "Please select any row from the table");
         }
     }//GEN-LAST:event_revokebuttonActionPerformed
 
@@ -588,40 +590,6 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
            
           img = ImageIO.read(url);
           Image dimg = img.getScaledInstance(jlabel.getWidth(), jlabel.getHeight(), Image.SCALE_SMOOTH);
-          
-            
-            /*
-          BufferedImage image = ImageIO.read("img.jpg");
-BufferedImage ret = new BufferedImage(32,32,BufferedImage.TYPE_RGB);
-ret.getGraphics().drawImage(image,0,0,32,32,null);
-                     JButton btn = (JButton) e.getComponent();
-                            Dimension size = btn.getSize();
-                            Insets insets = btn.getInsets();
-                            size.width -= insets.left + insets.right;
-                            size.height -= insets.top + insets.bottom;
-                            if (size.width > size.height) {
-                                size.width = -1;
-                            } else {
-                                size.height = -1;
-                            }
-                            Image scaled = master.getScaledInstance(size.width, size.height, java.awt.Image.SCALE_SMOOTH);
-                            btn.setIcon(new ImageIcon(scaled));
-            
-            
-            
-            */
-//            JLabel jlabel1;
-//           jlabel1 = (JLabel) jlabel.getComponent();
-//            Dimension size = jlabel.getSize();
-//            Insets insets = jlabel.getInsets();
-//            size.width -= insets.left + insets.right;
-//            size.height -= insets.top + insets.bottom;
-//            if (size.width > size.height) {
-//                size.width = -1;
-//            } else {
-//                size.height = -1;
-//            }
-//            Image dimg = img.getScaledInstance(size.width, size.height, Image.SCALE_SMOOTH);
             jlabel.setIcon(new javax.swing.ImageIcon(dimg));
             
             
@@ -726,8 +694,9 @@ ret.getGraphics().drawImage(image,0,0,32,32,null);
         }catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
-        
-        
+        }
+         else{
+                 JOptionPane.showMessageDialog(null, "Please select any row from the table");
         }
     }//GEN-LAST:event_rejectbuttonActionPerformed
 
