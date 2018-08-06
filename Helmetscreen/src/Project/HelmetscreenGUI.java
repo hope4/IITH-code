@@ -585,7 +585,7 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
        //System.out.println(timestamp);
        
          try {
-            URL url = new URL("file:///run/user/1001/gvfs/sftp:host=192.168.134.5,user=dinesh%253Ads123/home/dinesh/django-apps/webapp/htp/static/htp/Images/"+timestamp+".jpg");
+            URL url = new URL("file:///run/user/1001/gvfs/sftp:host=192.168.134.5,user=dinesh/home/dinesh/Downloads/webapp/htp/static/htp/Images/"+timestamp+".jpg");
            BufferedImage img = null;
            
           img = ImageIO.read(url);
@@ -622,7 +622,7 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
        
        
          try {
-            URL url = new URL("file:///run/user/1001/gvfs/sftp:host=192.168.134.5,user=dinesh%253Ads123/home/dinesh/django-apps/webapp/htp/static/htp/Images/"+timestamp+".jpg");
+            URL url = new URL("file:///run/user/1001/gvfs/sftp:host=192.168.134.5,user=dinesh/home/dinesh/Downloads/webapp/htp/static/htp/Images/"+timestamp+".jpg");
            BufferedImage img = null;
            
           img = ImageIO.read(url);
@@ -648,7 +648,7 @@ public class HelmetscreenGUI extends javax.swing.JFrame {
        
        
          try {
-            URL url = new URL("file:///run/user/1001/gvfs/sftp:host=192.168.134.5,user=dinesh%253Ads123/home/dinesh/django-apps/webapp/htp/static/htp/Images/"+timestamp+".jpg");
+            URL url = new URL("file:///run/user/1001/gvfs/sftp:host=192.168.134.5,user=dinesh/home/dinesh/Downloads/webapp/htp/static/htp/Images/"+timestamp+".jpg");
            BufferedImage img = null;
            
           img = ImageIO.read(url);
